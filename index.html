@@ -23,67 +23,69 @@
 
         #panorama { width: 100%; height: 500px; border-radius: 1.5rem; border: 4px solid #D4AF37; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3); }
         
-        .header-shadow { box-shadow: inset 0 -120px 100px -100px rgba(14, 29, 19, 0.9); }
+        /* Sombra interna para suavizar la unión con el banner */
+        .header-shadow { box-shadow: inset 0 -20px 20px -10px rgba(14, 29, 19, 0.5); }
     </style>
 </head>
 <body class="text-gray-800">
 
-    <!-- Encabezado con Imagen Larga -->
-    <header class="relative w-full bg-black overflow-hidden header-shadow">
-        <img src="logo poprtada.jpeg" alt="Andares Corporativo Portada" class="w-full h-auto min-h-[40vh] object-cover object-center">
+    <!-- Encabezado con Imagen Larga - CORREGIDO PARA MÓVIL -->
+    <header class="relative w-full bg-[#0E1D13] overflow-hidden">
+        <!-- Quitamos el min-h para que no se recorte y usamos block w-full -->
+        <img src="logo poprtada.jpeg" alt="Andares Corporativo Portada" class="w-full h-auto block">
         
-        <!-- Botón de Contacto Superior (Derecha) -->
-        <div class="absolute top-6 right-6 md:top-10 md:right-10 z-50">
-            <a href="#contacto" class="bg-green-700 hover:bg-green-600 text-white px-6 py-3 rounded-full font-bold text-sm transition shadow-2xl border border-white/20 uppercase tracking-widest">
-                Contactar Asesor
+        <!-- Botón de Contacto Superior - Ajustado para no estorbar en móvil -->
+        <div class="absolute top-2 right-2 md:top-10 md:right-10 z-50">
+            <a href="#contacto" class="bg-green-700/80 backdrop-blur-md hover:bg-green-700 text-white px-3 py-1.5 md:px-6 md:py-3 rounded-full font-bold text-[9px] md:text-sm transition shadow-2xl border border-white/10 uppercase tracking-widest">
+                Contactar <span class="hidden md:inline">Asesor</span>
             </a>
         </div>
     </header>
 
     <!-- Título y Oferta -->
-    <section class="bg-bosque text-white py-16 px-6 text-center">
+    <section class="bg-bosque text-white py-12 md:py-16 px-6 text-center header-shadow">
         <div class="max-w-4xl mx-auto">
-            <span class="gold-text uppercase tracking-[0.4em] text-xs font-bold mb-4 block">Patrimonio y Plusvalía</span>
-            <h2 class="text-5xl md:text-7xl font-black mb-4 leading-none tracking-tighter uppercase italic">Col. 21 de Marzo</h2>
-            <p class="text-lg md:text-2xl mb-10 text-gray-400 font-light italic">El terreno que soñaste, con la conectividad que necesitas.</p>
+            <span class="gold-text uppercase tracking-[0.4em] text-[10px] md:text-xs font-bold mb-4 block">Patrimonio y Plusvalía</span>
+            <h2 class="text-4xl md:text-7xl font-black mb-4 leading-none tracking-tighter uppercase italic">Col. 21 de Marzo</h2>
+            <p class="text-base md:text-2xl mb-10 text-gray-400 font-light italic px-4">El terreno que soñaste, con la conectividad que necesitas.</p>
             
-            <div class="bg-white/5 border border-white/10 p-8 rounded-[2rem] inline-block shadow-2xl backdrop-blur-sm">
-                <p class="text-xs uppercase tracking-widest mb-2 text-gray-400">Mensualidades desde</p>
-                <p class="text-6xl font-black gold-text italic">$5,000 <span class="text-xl font-normal text-white">MXN</span></p>
+            <div class="bg-white/5 border border-white/10 p-6 md:p-8 rounded-[2rem] inline-block shadow-2xl backdrop-blur-sm">
+                <p class="text-[10px] md:text-xs uppercase tracking-widest mb-2 text-gray-400 font-bold">Mensualidades desde</p>
+                <p class="text-5xl md:text-6xl font-black gold-text italic">$5,000 <span class="text-lg md:text-xl font-normal text-white">MXN</span></p>
             </div>
         </div>
     </section>
 
     <!-- Características -->
-    <section class="py-16 px-6 max-w-7xl mx-auto -mt-12 relative z-20">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-10 rounded-[2.5rem] shadow-2xl border-t-8 border-bosque text-center hover:-translate-y-2 transition duration-300">
-                <i class="fa-solid fa-expand-arrows-alt text-5xl gold-text mb-6"></i>
-                <h3 class="font-black text-2xl text-bosque uppercase">105 m²</h3>
-                <p class="text-xs text-gray-500 uppercase font-bold tracking-widest mt-2">Área Total (7x15m)</p>
+    <section class="py-12 md:py-16 px-6 max-w-7xl mx-auto -mt-8 md:-mt-12 relative z-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div class="bg-white p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-xl border-t-8 border-bosque text-center hover:-translate-y-2 transition duration-300">
+                <i class="fa-solid fa-expand-arrows-alt text-4xl md:text-5xl gold-text mb-6"></i>
+                <h3 class="font-black text-xl md:text-2xl text-bosque uppercase">105 m²</h3>
+                <p class="text-[10px] md:text-xs text-gray-500 uppercase font-bold tracking-widest mt-2">Área Total (7x15m)</p>
             </div>
-            <div class="bg-white p-10 rounded-[2.5rem] shadow-2xl border-t-8 border-bosque text-center hover:-translate-y-2 transition duration-300">
-                <i class="fa-solid fa-shield-check text-5xl gold-text mb-6"></i>
-                <h3 class="font-black text-2xl text-bosque uppercase">Certeza</h3>
-                <p class="text-xs text-gray-500 uppercase font-bold tracking-widest mt-2">Cesión de Derechos</p>
+            <div class="bg-white p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-xl border-t-8 border-bosque text-center hover:-translate-y-2 transition duration-300">
+                <i class="fa-solid fa-shield-check text-4xl md:text-5xl gold-text mb-6"></i>
+                <h3 class="font-black text-xl md:text-2xl text-bosque uppercase">Certeza</h3>
+                <p class="text-[10px] md:text-xs text-gray-500 uppercase font-bold tracking-widest mt-2">Cesión de Derechos</p>
             </div>
-            <div class="bg-white p-10 rounded-[2.5rem] shadow-2xl border-t-8 border-bosque text-center hover:-translate-y-2 transition duration-300">
-                <i class="fa-solid fa-truck-fast text-5xl gold-text mb-6"></i>
-                <h3 class="font-black text-2xl text-bosque uppercase">Inmediata</h3>
-                <p class="text-xs text-gray-500 uppercase font-bold tracking-widest mt-2">Posesión y Entrega</p>
+            <div class="bg-white p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-xl border-t-8 border-bosque text-center hover:-translate-y-2 transition duration-300">
+                <i class="fa-solid fa-truck-fast text-4xl md:text-5xl gold-text mb-6"></i>
+                <h3 class="font-black text-xl md:text-2xl text-bosque uppercase">Inmediata</h3>
+                <p class="text-[10px] md:text-xs text-gray-500 uppercase font-bold tracking-widest mt-2">Posesión y Entrega</p>
             </div>
         </div>
     </section>
 
-    <!-- Tour 360 (1 foto) -->
-    <section id="tour360" class="py-20 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-black uppercase text-bosque italic">Visita Virtual 360°</h2>
-            <div class="h-1.5 w-24 gold-gradient mx-auto mt-4 rounded-full"></div>
+    <!-- Tour 360 -->
+    <section id="tour360" class="py-16 md:py-20 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-black uppercase text-bosque italic">Visita Virtual 360°</h2>
+            <div class="h-1.5 w-20 md:w-24 gold-gradient mx-auto mt-4 rounded-full"></div>
         </div>
         <div class="relative">
             <div id="panorama"></div>
-            <div class="absolute top-6 left-1/2 -translate-x-1/2 bg-black/80 text-white px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest backdrop-blur-md border border-white/20 z-10 flex items-center gap-4 md:hidden">
+            <div class="absolute top-6 left-1/2 -translate-x-1/2 bg-black/80 text-white px-5 py-2.5 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest backdrop-blur-md border border-white/20 z-10 flex items-center gap-3 md:hidden">
                 <i class="fa-solid fa-arrows-rotate animate-spin gold-text"></i>
                 <span>Gira para explorar el terreno</span>
             </div>
@@ -91,31 +93,31 @@
     </section>
 
     <!-- Ubicación y Timelapse -->
-    <section class="py-24 bg-white border-y border-gray-100">
+    <section class="py-20 md:py-24 bg-white border-y border-gray-100">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
-                <div class="rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-8 border-gray-50">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center mb-20 md:mb-24">
+                <div class="rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-4 md:border-8 border-gray-50">
                     <img src="croquis_neon.jpg" alt="Croquis Neón" class="w-full h-auto">
                 </div>
                 <div>
-                    <h2 class="text-5xl font-black mb-8 uppercase italic text-bosque leading-tight">Ubicación <br><span class="gold-text">Privilegiada</span></h2>
-                    <p class="text-gray-600 text-xl mb-8">Ubicados en la zona de mayor crecimiento de la 21 de Marzo, rodeados de naturaleza pero con acceso inmediato a la ciudad.</p>
-                    <ul class="space-y-5">
-                        <li class="flex items-center gap-4 text-lg font-semibold"><i class="fa-solid fa-circle-check gold-text text-2xl"></i> Zona en alta plusvalía</li>
-                        <li class="flex items-center gap-4 text-lg font-semibold"><i class="fa-solid fa-circle-check gold-text text-2xl"></i> Terrenos planos</li>
-                        <li class="flex items-center gap-4 text-lg font-semibold"><i class="fa-solid fa-circle-check gold-text text-2xl"></i> Servicios a pie de lote</li>
+                    <h2 class="text-4xl md:text-5xl font-black mb-6 md:mb-8 uppercase italic text-bosque leading-tight text-center md:text-left">Ubicación <br><span class="gold-text">Privilegiada</span></h2>
+                    <p class="text-gray-600 text-lg md:text-xl mb-8 text-center md:text-left">Ubicados en la zona de mayor crecimiento de la 21 de Marzo, rodeados de naturaleza pero con acceso inmediato a la ciudad.</p>
+                    <ul class="space-y-4 md:space-y-5 px-4 md:px-0">
+                        <li class="flex items-center gap-4 text-base md:text-lg font-semibold"><i class="fa-solid fa-circle-check gold-text text-xl md:text-2xl"></i> Zona en alta plusvalía</li>
+                        <li class="flex items-center gap-4 text-base md:text-lg font-semibold"><i class="fa-solid fa-circle-check gold-text text-xl md:text-2xl"></i> Terrenos planos</li>
+                        <li class="flex items-center gap-4 text-base md:text-lg font-semibold"><i class="fa-solid fa-circle-check gold-text text-xl md:text-2xl"></i> Servicios a pie de lote</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Timelapse de YouTube (VIDEO ACTUALIZADO) -->
-            <div class="bg-bosque p-12 rounded-[4rem] text-white">
-                <div class="grid md:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <h3 class="text-4xl font-black mb-6 uppercase italic gold-text">A 4 Minutos del Bulevar</h3>
-                        <p class="text-gray-400 text-lg mb-8">Mira este recorrido real desde el Bulevar Banderilla-Xalapa hasta los terrenos. Comprueba la conectividad hoy mismo.</p>
+            <!-- Timelapse de YouTube -->
+            <div class="bg-bosque p-8 md:p-12 rounded-[3rem] md:rounded-[4rem] text-white">
+                <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-3xl md:text-4xl font-black mb-6 uppercase italic gold-text">A 4 Minutos del Bulevar</h3>
+                        <p class="text-gray-400 text-base md:text-lg mb-8">Mira este recorrido real desde el Bulevar Banderilla-Xalapa hasta los terrenos. Comprueba la conectividad hoy mismo.</p>
                     </div>
-                    <div class="rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/10 aspect-video relative bg-black">
+                    <div class="rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/10 aspect-video relative bg-black">
                         <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/g0t9_3FmsMA?rel=0" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
@@ -124,36 +126,36 @@
     </section>
 
     <!-- Asesores -->
-    <section id="contacto" class="py-24 bg-gray-50">
+    <section id="contacto" class="py-20 md:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-5xl font-black uppercase mb-16 italic text-bosque">Nuestros Asesores</h2>
-            <div class="grid md:grid-cols-3 gap-10">
+            <h2 class="text-4xl md:text-5xl font-black uppercase mb-12 md:mb-16 italic text-bosque">Nuestros Asesores</h2>
+            <div class="grid md:grid-cols-3 gap-8 md:gap-10">
                 
                 <!-- Asesor 1 -->
-                <div class="bg-white p-10 rounded-[3rem] shadow-xl border-b-[12px] border-bosque">
-                    <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
-                        <i class="fa-solid fa-user-tie text-3xl text-bosque"></i>
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] shadow-xl border-b-[10px] md:border-b-[12px] border-bosque">
+                    <div class="w-16 md:w-20 h-16 md:h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 md:mb-8 shadow-inner">
+                        <i class="fa-solid fa-user-tie text-2xl md:text-3xl text-bosque"></i>
                     </div>
-                    <h3 class="font-black text-xl mb-6 uppercase italic text-bosque">Asesor Inmobiliario</h3>
-                    <a href="https://wa.me/5212284237348?text=Hola,%20solicito%20información%20sobre%20los%20lotes%20de%20$5,000%20en%20la%2021%20de%20Marzo" class="block w-full bg-bosque text-white py-4 rounded-2xl font-bold hover:bg-green-900 transition shadow-lg uppercase text-xs tracking-widest">Enviar WhatsApp</a>
+                    <h3 class="font-black text-lg md:text-xl mb-6 uppercase italic text-bosque leading-none">Asesor <br class="md:hidden"> Inmobiliario</h3>
+                    <a href="https://wa.me/5212284237348?text=Hola,%20solicito%20información%20sobre%20los%20lotes%20de%20$5,000%20en%20la%2021%20de%20Marzo" class="block w-full bg-bosque text-white py-4 rounded-2xl font-bold hover:bg-green-900 transition shadow-lg uppercase text-[10px] tracking-widest">Enviar WhatsApp</a>
                 </div>
 
                 <!-- Asesor 2 -->
-                <div class="bg-white p-10 rounded-[3rem] shadow-xl border-b-[12px] border-bosque">
-                    <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
-                        <i class="fa-solid fa-user-tie text-3xl text-bosque"></i>
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] shadow-xl border-b-[10px] md:border-b-[12px] border-bosque">
+                    <div class="w-16 md:w-20 h-16 md:h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 md:mb-8 shadow-inner">
+                        <i class="fa-solid fa-user-tie text-2xl md:text-3xl text-bosque"></i>
                     </div>
-                    <h3 class="font-black text-xl mb-4 uppercase italic text-bosque">Asesor Inmobiliario</h3>
-                    <a href="https://wa.me/5212731325005?text=Hola,%20solicito%20información%20sobre%20los%20lotes%20de%20$5,000%20en%20la%2021%20de%20Marzo" class="block w-full bg-bosque text-white py-4 rounded-2xl font-bold hover:bg-green-900 transition shadow-lg uppercase text-xs tracking-widest">Enviar WhatsApp</a>
+                    <h3 class="font-black text-lg md:text-xl mb-6 uppercase italic text-bosque leading-none">Asesor <br class="md:hidden"> Inmobiliario</h3>
+                    <a href="https://wa.me/5212731325005?text=Hola,%20solicito%20información%20sobre%20los%20lotes%20de%20$5,000%20en%20la%2021%20de%20Marzo" class="block w-full bg-bosque text-white py-4 rounded-2xl font-bold hover:bg-green-900 transition shadow-lg uppercase text-[10px] tracking-widest">Enviar WhatsApp</a>
                 </div>
 
                 <!-- Asesor 3 -->
-                <div class="bg-white p-10 rounded-[3rem] shadow-xl border-b-[12px] border-bosque">
-                    <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
-                        <i class="fa-solid fa-user-tie text-3xl text-bosque"></i>
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3rem] shadow-xl border-b-[10px] md:border-b-[12px] border-bosque">
+                    <div class="w-16 md:w-20 h-16 md:h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 md:mb-8 shadow-inner">
+                        <i class="fa-solid fa-user-tie text-2xl md:text-3xl text-bosque"></i>
                     </div>
-                    <h3 class="font-black text-xl mb-6 uppercase italic text-bosque">Asesor Inmobiliario</h3>
-                    <a href="https://wa.me/5212283146884?text=Hola,%20solicito%20información%20sobre%20los%20lotes%20de%20$5,000%20en%20la%2021%20de%20Marzo" class="block w-full bg-bosque text-white py-4 rounded-2xl font-bold hover:bg-green-900 transition shadow-lg uppercase text-xs tracking-widest">Enviar WhatsApp</a>
+                    <h3 class="font-black text-lg md:text-xl mb-6 uppercase italic text-bosque leading-none">Asesor <br class="md:hidden"> Inmobiliario</h3>
+                    <a href="https://wa.me/5212283146884?text=Hola,%20solicito%20información%20sobre%20los%20lotes%20de%20$5,000%20en%20la%2021%20de%20Marzo" class="block w-full bg-bosque text-white py-4 rounded-2xl font-bold hover:bg-green-900 transition shadow-lg uppercase text-[10px] tracking-widest">Enviar WhatsApp</a>
                 </div>
 
             </div>
@@ -161,13 +163,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-bosque text-white py-16 text-center border-t border-white/5">
-        <p class="text-gray-400 text-sm font-bold uppercase tracking-[0.5em] mb-4">Andares Corporativo</p>
-        <p class="text-gray-600 text-[10px] uppercase tracking-widest">Confianza que construye | Todos los derechos reservados © 2026</p>
+    <footer class="bg-bosque text-white py-12 md:py-16 text-center border-t border-white/5">
+        <p class="text-gray-400 text-xs md:text-sm font-bold uppercase tracking-[0.4em] md:tracking-[0.5em] mb-4">Andares Corporativo</p>
+        <p class="text-gray-600 text-[9px] md:text-[10px] uppercase tracking-widest px-6">Confianza que construye | Todos los derechos reservados © 2026</p>
     </footer>
 
     <!-- WhatsApp Flotante Principal -->
-    <a href="https://wa.me/5212283146884?text=Hola,%20vengo%20de%20la%20página%20y%20quiero%20información%20de%20la%2021%20de%20Marzo" class="fixed bottom-10 right-10 bg-[#25d366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-[0_10px_30px_rgba(37,211,102,0.5)] z-[100] hover:scale-110 transition duration-300">
+    <a href="https://wa.me/5212283146884?text=Hola,%20vengo%20de%20la%20página%20y%20quiero%20información%20de%20la%2021%20de%20Marzo" class="fixed bottom-6 md:bottom-10 right-6 md:right-10 bg-[#25d366] text-white w-14 md:w-16 h-14 md:h-16 rounded-full flex items-center justify-center text-2xl md:text-3xl shadow-[0_10px_30px_rgba(37,211,102,0.5)] z-[100] hover:scale-110 transition duration-300">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
